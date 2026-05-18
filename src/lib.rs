@@ -1,9 +1,9 @@
-pub trait Duplex {
-    type Protocol;
-    type Effect<T>;
-    type SendErr;
+/// This library provides general pattern implementations for  
 
-    fn send(&self, msg: Self::Protocol) -> Result<(), Self::SendErr>;
+pub mod multiple;
+pub mod single;
+pub mod pubsub;
 
-    fn recv(&self) -> Self::Effect<Self::Protocol>;
-}
+/// Marker Struct
+pub struct UseInPerun<T>(pub T);
+
